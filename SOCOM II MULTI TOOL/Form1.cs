@@ -21,7 +21,7 @@ namespace SOCOM_II_TOOL
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            string data = ("YOU MUST ENABLE CHEATS AND THEN DISABLE CHEATS IN PCSX2 FOR ALL FUNCTIONS TO WORK...");
+            string data = ("YOU MUST ENABLE CHEATS AND THEN DISABLE CHEATS IN PCSX2 for RENDER FIX...");
             MessageBox.Show(data);
 
             if (pcsx2Running)
@@ -58,8 +58,7 @@ namespace SOCOM_II_TOOL
         {
             if (pcsx2Running)
             {
-                int newdata = 0x100000DB;
-                m.Write<Int32>(GameHelper.RENDER, newdata, false);
+                m.Write<Int32>(GameHelper.RENDER, 0x100000DB, false);
             }
         }
 
@@ -67,8 +66,7 @@ namespace SOCOM_II_TOOL
         {
             if (pcsx2Running)
             {
-                int newdata = 0x106000DB;
-                m.Write<Int32>(GameHelper.RENDER, newdata, false);
+                m.Write<Int32>(GameHelper.RENDER, 0x106000DB, false);
             }
         }
 
@@ -76,14 +74,9 @@ namespace SOCOM_II_TOOL
         {
             if (pcsx2Running)
             {
-                m = new MemorySharp(Process.GetProcessesByName(PCSX2PROCESSNAME).First());
-
-                int newdata1 = 0x00000000;
-                int newdata2 = 0x00000000;
-                int newdata3 = 0x00000000;
-                m.Write<Int32>(GameHelper.BRIGHTNESS1, newdata1, false);
-                m.Write<Int32>(GameHelper.BRIGHTNESS2, newdata2, false);
-                m.Write<Int32>(GameHelper.BRIGHTNESS3, newdata3, false);
+                m.Write<Int32>(GameHelper.BRIGHTNESS1, 0x00000000, false);
+                m.Write<Int32>(GameHelper.BRIGHTNESS2, 0x00000000, false);
+                m.Write<Int32>(GameHelper.BRIGHTNESS3, 0x00000000, false);
             }
         }
 
@@ -91,12 +84,9 @@ namespace SOCOM_II_TOOL
         {
             if (pcsx2Running)
             {
-                int newdata1 = 0x40800000;
-                int newdata2 = 0x40800000;
-                int newdata3 = 0x40800000;
-                m.Write<Int32>(GameHelper.BRIGHTNESS1, newdata1, false);
-                m.Write<Int32>(GameHelper.BRIGHTNESS2, newdata2, false);
-                m.Write<Int32>(GameHelper.BRIGHTNESS3, newdata3, false);
+                m.Write<Int32>(GameHelper.BRIGHTNESS1, 0x40800000, false);
+                m.Write<Int32>(GameHelper.BRIGHTNESS2, 0x40800000, false);
+                m.Write<Int32>(GameHelper.BRIGHTNESS3, 0x40800000, false);
             }
         }
 
@@ -104,12 +94,9 @@ namespace SOCOM_II_TOOL
         {
             if (pcsx2Running)
             {
-                int newdata1 = 0x41000000;
-                int newdata2 = 0x41000000;
-                int newdata3 = 0x41000000;
-                m.Write<Int32>(GameHelper.BRIGHTNESS1, newdata1, false);
-                m.Write<Int32>(GameHelper.BRIGHTNESS2, newdata2, false);
-                m.Write<Int32>(GameHelper.BRIGHTNESS3, newdata3, false);
+                m.Write<Int32>(GameHelper.BRIGHTNESS1, 0x41000000, false);
+                m.Write<Int32>(GameHelper.BRIGHTNESS2, 0x41000000, false);
+                m.Write<Int32>(GameHelper.BRIGHTNESS3, 0x41000000, false);
             }
         }
 
@@ -117,12 +104,9 @@ namespace SOCOM_II_TOOL
         {
             if (pcsx2Running)
             {
-                int newdata1 = 0x41880000;
-                int newdata2 = 0x41880000;
-                int newdata3 = 0x41880000;
-                m.Write<Int32>(GameHelper.BRIGHTNESS1, newdata1, false);
-                m.Write<Int32>(GameHelper.BRIGHTNESS2, newdata2, false);
-                m.Write<Int32>(GameHelper.BRIGHTNESS3, newdata3, false);
+                m.Write<Int32>(GameHelper.BRIGHTNESS1, 0x41880000, false);
+                m.Write<Int32>(GameHelper.BRIGHTNESS2, 0x41880000, false);
+                m.Write<Int32>(GameHelper.BRIGHTNESS3, 0x41880000, false);
             }
         }
     }
