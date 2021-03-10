@@ -24,10 +24,11 @@ namespace SOCOM_II_TOOL
             string data = ("YOU MUST ENABLE CHEATS AND THEN DISABLE CHEATS IN PCSX2 for RENDER FIX...");
             MessageBox.Show(data);
 
-            if (pcsx2Running)
+            if (!pcsx2Running)
             {
-                m = new MemorySharp(Process.GetProcessesByName(PCSX2PROCESSNAME).First());
+                return;
             }
+         m = new MemorySharp(Process.GetProcessesByName(PCSX2PROCESSNAME).First());
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -48,66 +49,109 @@ namespace SOCOM_II_TOOL
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            if (pcsx2Running)
+            if (!pcsx2Running)
             {
-                m = new MemorySharp(Process.GetProcessesByName(PCSX2PROCESSNAME).First());
+                return;
             }
+         m = new MemorySharp(Process.GetProcessesByName(PCSX2PROCESSNAME).First());
         }
 
         private void ROn_Click(object sender, EventArgs e)
         {
-            if (pcsx2Running)
+            if (!pcsx2Running)
             {
-                m.Write<Int32>(GameHelper.RENDER, 0x100000DB, false);
+                return;
             }
+         m.Write<Int32>(GameHelper.RENDER, 0x100000DB, false);
         }
 
         private void ROff_Click(object sender, EventArgs e)
         {
             if (pcsx2Running)
             {
-                m.Write<Int32>(GameHelper.RENDER, 0x106000DB, false);
+                return;
             }
+         m.Write<Int32>(GameHelper.RENDER, 0x106000DB, false);
         }
 
         private void BLow_Click(object sender, EventArgs e)
         {
-            if (pcsx2Running)
+            if (!pcsx2Running)
             {
-                m.Write<Int32>(GameHelper.BRIGHTNESS1, 0x00000000, false);
-                m.Write<Int32>(GameHelper.BRIGHTNESS2, 0x00000000, false);
-                m.Write<Int32>(GameHelper.BRIGHTNESS3, 0x00000000, false);
+                return;
             }
+         m.Write<Int32>(GameHelper.BRIGHTNESS1, 0x00000000, false);
+         m.Write<Int32>(GameHelper.BRIGHTNESS2, 0x00000000, false);
+         m.Write<Int32>(GameHelper.BRIGHTNESS3, 0x00000000, false);  
         }
 
         private void PerfectBrightness_Click(object sender, EventArgs e)
         {
-            if (pcsx2Running)
+            if (!pcsx2Running)
             {
-                m.Write<Int32>(GameHelper.BRIGHTNESS1, 0x40800000, false);
-                m.Write<Int32>(GameHelper.BRIGHTNESS2, 0x40800000, false);
-                m.Write<Int32>(GameHelper.BRIGHTNESS3, 0x40800000, false);
+                return;
             }
+         int newdata1 = 0x00000000;
+         m.Write<Int32>(GameHelper.BRIGHTNESS1, 0x40800000, false);
+         m.Write<Int32>(GameHelper.BRIGHTNESS1_LOCK1, newdata1, false);
+         m.Write<Int32>(GameHelper.BRIGHTNESS1_LOCK2, newdata1, false);
+         m.Write<Int32>(GameHelper.BRIGHTNESS1_RESET, newdata1, false);
+         m.Write<Int32>(GameHelper.BRIGHTNESS2, 0x40800000, false);
+         m.Write<Int32>(GameHelper.BRIGHTNESS2_LOCK1, newdata1, false);
+         m.Write<Int32>(GameHelper.BRIGHTNESS2_LOCK2, newdata1, false);
+         m.Write<Int32>(GameHelper.BRIGHTNESS2_RESET, newdata1, false);
+         m.Write<Int32>(GameHelper.BRIGHTNESS3, 0x40800000, false);
+         m.Write<Int32>(GameHelper.BRIGHTNESS3_LOCK1, newdata1, false);
+         m.Write<Int32>(GameHelper.BRIGHTNESS3_LOCK2, newdata1, false);
+         m.Write<Int32>(GameHelper.BRIGHTNESS3_LOCK3, newdata1, false);
+         m.Write<Int32>(GameHelper.BRIGHTNESS3_RESET, newdata1, false);
+         m.Write<Int32>(GameHelper.BRIGHTNESS3_RESETA, newdata1, false);
         }
 
         private void ProModBrightness_Click(object sender, EventArgs e)
         {
-            if (pcsx2Running)
+            if (!pcsx2Running)
             {
-                m.Write<Int32>(GameHelper.BRIGHTNESS1, 0x41000000, false);
-                m.Write<Int32>(GameHelper.BRIGHTNESS2, 0x41000000, false);
-                m.Write<Int32>(GameHelper.BRIGHTNESS3, 0x41000000, false);
+                return;
             }
+         int newdata1 = 0x00000000;
+         m.Write<Int32>(GameHelper.BRIGHTNESS1, 0x41000000, false);
+         m.Write<Int32>(GameHelper.BRIGHTNESS1_LOCK1, newdata1, false);
+         m.Write<Int32>(GameHelper.BRIGHTNESS1_LOCK2, newdata1, false);
+         m.Write<Int32>(GameHelper.BRIGHTNESS1_RESET, newdata1, false);
+         m.Write<Int32>(GameHelper.BRIGHTNESS2, 0x41000000, false);
+         m.Write<Int32>(GameHelper.BRIGHTNESS2_LOCK1, newdata1, false);
+         m.Write<Int32>(GameHelper.BRIGHTNESS2_LOCK2, newdata1, false);
+         m.Write<Int32>(GameHelper.BRIGHTNESS2_RESET, newdata1, false);
+         m.Write<Int32>(GameHelper.BRIGHTNESS3, 0x41000000, false);
+         m.Write<Int32>(GameHelper.BRIGHTNESS3_LOCK1, newdata1, false);
+         m.Write<Int32>(GameHelper.BRIGHTNESS3_LOCK2, newdata1, false);
+         m.Write<Int32>(GameHelper.BRIGHTNESS3_LOCK3, newdata1, false);
+         m.Write<Int32>(GameHelper.BRIGHTNESS3_RESET, newdata1, false);
+         m.Write<Int32>(GameHelper.BRIGHTNESS3_RESETA, newdata1, false);
         }
 
         private void BMax_Click(object sender, EventArgs e)
         {
-            if (pcsx2Running)
+            if (!pcsx2Running)
             {
-                m.Write<Int32>(GameHelper.BRIGHTNESS1, 0x41880000, false);
-                m.Write<Int32>(GameHelper.BRIGHTNESS2, 0x41880000, false);
-                m.Write<Int32>(GameHelper.BRIGHTNESS3, 0x41880000, false);
+                return;
             }
+         int newdata1 = 0x00000000;
+         m.Write<Int32>(GameHelper.BRIGHTNESS1, 0x41880000, false);
+         m.Write<Int32>(GameHelper.BRIGHTNESS1_LOCK1, newdata1, false);
+         m.Write<Int32>(GameHelper.BRIGHTNESS1_LOCK2, newdata1, false);
+         m.Write<Int32>(GameHelper.BRIGHTNESS1_RESET, newdata1, false);
+         m.Write<Int32>(GameHelper.BRIGHTNESS2, 0x41880000, false);
+         m.Write<Int32>(GameHelper.BRIGHTNESS2_LOCK1, newdata1, false);
+         m.Write<Int32>(GameHelper.BRIGHTNESS2_LOCK2, newdata1, false);
+         m.Write<Int32>(GameHelper.BRIGHTNESS2_RESET, newdata1, false);
+         m.Write<Int32>(GameHelper.BRIGHTNESS3, 0x41880000, false);
+         m.Write<Int32>(GameHelper.BRIGHTNESS3_LOCK1, newdata1, false);
+         m.Write<Int32>(GameHelper.BRIGHTNESS3_LOCK2, newdata1, false);
+         m.Write<Int32>(GameHelper.BRIGHTNESS3_LOCK3, newdata1, false);
+         m.Write<Int32>(GameHelper.BRIGHTNESS3_RESET, newdata1, false);
+         m.Write<Int32>(GameHelper.BRIGHTNESS3_RESETA, newdata1, false);
         }
     }
 }

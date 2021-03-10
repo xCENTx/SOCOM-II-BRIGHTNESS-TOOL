@@ -133,9 +133,9 @@ namespace SOCOM_II_TOOL
             // 
             this.BMax.Location = new System.Drawing.Point(243, 31);
             this.BMax.Name = "BMax";
-            this.BMax.Size = new System.Drawing.Size(82, 32);
+            this.BMax.Size = new System.Drawing.Size(80, 32);
             this.BMax.TabIndex = 49;
-            this.BMax.Text = "BLIND ME!";
+            this.BMax.Text = "DAY TIME";
             this.BMax.UseVisualStyleBackColor = true;
             this.BMax.Click += new System.EventHandler(this.BMax_Click);
             // 
@@ -228,7 +228,7 @@ namespace SOCOM_II_TOOL
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "SOCOM II MULTI TOOL by CENT v1.69";
+            this.Text = "SOCOM II MULTI TOOL by CENT v2.69";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.pnl_PCSX2Detected.ResumeLayout(false);
             this.pnl_PCSX2Detected.PerformLayout();
