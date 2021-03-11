@@ -67,7 +67,7 @@ namespace SOCOM_II_TOOL
 
         private void ROff_Click(object sender, EventArgs e)
         {
-            if (pcsx2Running)
+            if (!pcsx2Running)
             {
                 return;
             }
