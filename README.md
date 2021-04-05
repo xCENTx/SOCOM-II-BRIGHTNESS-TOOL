@@ -1,3 +1,3 @@
-# SOCOM-II-MULTI-TOOL_OpenSource
+# SOCOM-II-BRIGHTNESS-TOOL
 
-TRAINER for SOCOM II U.S. Navy SEALs [PCSX2]
+Brightness Adjustment Trainer for SOCOM II U.S. Navy SEALs [PCSX2]
